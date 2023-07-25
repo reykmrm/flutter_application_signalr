@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:signalr_core/signalr_core.dart';
-
-import 'api/signalr_service.dart';
-
-
+import 'package:get/get.dart';
+import 'src/pages/home/home_page.dart';
+import 'src/pages/home/perfil/page_perfil.dart';
+import 'src/providers/conexion_signalr.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,21 +12,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Create an instance of ChatHubService
-    final chatHubService = ChatHubService();
+    final chatHubService = ConexionSignalR();
 
     // Open the SignalR connection when the app starts
     chatHubService.openSignalRConnection();
 
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+      initialRoute: '/home',
+      getPages: [
+        GetPage(name: '/home', page: () => const HomePage()),
+        GetPage(name: '/perfil', page: () => const PagePerfil()),
+        // GetPage(name: "/fourth", page: () => Fourth()),
+      ],
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
       ),
+      navigatorKey: Get.key,
     );
   }
 }
