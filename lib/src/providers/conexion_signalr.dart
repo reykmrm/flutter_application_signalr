@@ -26,7 +26,7 @@ class ConexionSignalR {
         // La conexión se ha cerrado después de estar previamente conectada.
         print("La conexión a SignalR se ha cerrado. Intentando reconectar...");
         _isConnected = false;
-        _reconnect();
+        //_reconnect();
       } else {
         // La conexión nunca se estableció o se cerró intencionalmente.
         print(

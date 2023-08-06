@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_signalr/src/pages/home/chat/page_chat.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import 'perfil/page_perfil.dart';
+import 'register/page_register_users.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,11 +20,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Obx(() => IndexedStack(
             index: currentPage.value,
-            children: const [
+            children: [
               PagePerfil(),
-              //Buscar(),
+              ChatScreen(),
             ],
           )),
+      
       bottomNavigationBar: GNav(
         gap: 18,
         backgroundColor: Colors.blue,
@@ -35,10 +38,10 @@ class _HomePageState extends State<HomePage> {
             icon: Icons.chat,
             text: 'Chat',
           ),
-          // GButton(
-          //   icon: Icons.person_2,
-          //   text: 'buscar',
-          // ),
+          GButton(
+            icon: Icons.person_2,
+            text: 'Registro',
+          ),
         ],
       ),
     );

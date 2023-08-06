@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_signalr/src/pages/home/register/page_register_users.dart';
 import 'package:get/get.dart';
 import 'src/pages/home/home_page.dart';
 import 'src/pages/home/perfil/page_perfil.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       getPages: [
         GetPage(name: '/home', page: () => const HomePage()),
-        GetPage(name: '/perfil', page: () => const PagePerfil()),
+        GetPage(name: '/register_user', page: () => PageRegisterUser()),
         // GetPage(name: "/fourth", page: () => Fourth()),
       ],
       theme: ThemeData(

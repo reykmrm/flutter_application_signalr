@@ -19,4 +19,13 @@ class Users {
       pass: json['pass'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'users': users,
+      'pass': pass,
+    };
+  }
+  
 }
