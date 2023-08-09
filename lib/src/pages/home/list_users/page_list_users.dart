@@ -59,7 +59,8 @@ class ListsUsers extends StatelessWidget {
                           con.showDeleteButtonForIndex(index);
                         },
                         onTap: () {
-                          Get.snackbar('Mensaje', 'Este es un mensaje ');
+                          Get.snackbar(
+                              'Mensaje', 'el id seleccionado es $index');
                         },
                         leading: Icon(Icons
                             .person), // Mantener el ícono de persona en el leading
